@@ -22,7 +22,7 @@ BIP 440 and BIP 441 are also published in [bitcoin/bips](https://github.com/bitc
 
 - **Bitcoin Core prototype:** [bitcoin-gsr/bitcoin](https://github.com/bitcoin-gsr/bitcoin) implements all five documents under one deployment, never active on mainnet, with unit, functional and fuzz tests.  It is a research prototype.
 - **Test vectors:** JSON vectors in [`bip-0441/`](https://github.com/jmoik/bips/tree/gsr-full/bip-0441) match the prototype, and an independent evaluator written from the BIP texts alone reproduces every vector.
-- **Benchmarks:** [bitcoin-gsr/varopsData](https://github.com/bitcoin-gsr/varopsData) holds the `bench_varops` results and the methodology the BIP 440 costs are fitted from.
+- **Benchmarks:** [bitcoin-gsr/varopsData](https://github.com/bitcoin-gsr/varopsData) holds the measurements from several machines and the methodology behind the BIP 440 costs: prices are fitted from `bench_varops_primitives` and checked against complete scripts with `bench_varops`.
 
 ### Tools
 
@@ -43,5 +43,5 @@ All proof-of-concepts are research code and have not been audited.
 
 ### Help wanted
 
-- **Benchmarks on more hardware.**  Running `bench_varops` on machines not yet covered can raise the final costs; see [varopsData](https://github.com/bitcoin-gsr/varopsData).
+- **Benchmarks on more hardware.**  Running `bench_varops_primitives` and `bench_varops` on machines not yet covered can raise the final costs; see [varopsData](https://github.com/bitcoin-gsr/varopsData).
 - **Review** of the specifications and the prototype.

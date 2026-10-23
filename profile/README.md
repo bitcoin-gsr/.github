@@ -31,7 +31,6 @@ BIP 440 and BIP 441 are also published in [bitcoin/bips](https://github.com/bitc
 ### Proof-of-concepts
 
 - **Zero-knowledge proof verifiers:** [gsr-stark-verifier](https://github.com/ekrembal/gsr-stark-verifier) verifies a RISC Zero succinct receipt and a recursive Stwo proof bundle, each in one standard Taproot spend mined on activated regtest.  It includes a covenant that only a proof can spend, reading its outputs with OP_TX, and a privacy rollup settled by the RISC Zero verifier.
-- **Groth16 bridge:** [coins-gsr-v1](https://github.com/jmoik/coins-gsr-v1) verifies SP1 proofs, wrapped as Groth16, with a pure-GSR Groth16 verifier built from restored arithmetic and macros.
 - **Post-quantum signatures:** [shrincs-gsr](https://github.com/bitcoin-gsr/shrincs-gsr) verifies SHRINCS, a hash-based post-quantum signature scheme, in GSR Script, with each stage measured on the prototype.
 - **In the specifications:** state-carrying covenants, rebindable signatures and key delegation are worked through in the [Extended Primitives examples](https://github.com/jmoik/bips/blob/gsr-full/bip-unknown-extended-primitives.md).
 

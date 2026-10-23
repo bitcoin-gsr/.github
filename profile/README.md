@@ -20,14 +20,19 @@ BIP 440 and BIP 441 are also published in [bitcoin/bips](https://github.com/bitc
 
 ### Implementation
 
-- **Bitcoin Core prototype:** [bitcoin-gsr/bitcoin](https://github.com/bitcoin-gsr/bitcoin) implements all five documents under one deployment, with unit, functional and fuzz tests.  It is a prototype, not an activation or deployment.
+- **Bitcoin Core prototype:** [bitcoin-gsr/bitcoin](https://github.com/bitcoin-gsr/bitcoin) implements all five documents under one deployment, never active on mainnet, with unit, functional and fuzz tests.  It is a research prototype.
 - **Test vectors:** JSON vectors in [`bip-0441/`](https://github.com/jmoik/bips/tree/gsr-full/bip-0441) match the prototype, and an independent evaluator written from the BIP texts alone reproduces every vector.
 - **Benchmarks:** [bitcoin-gsr/varopsData](https://github.com/bitcoin-gsr/varopsData) holds the `bench_varops` results and the methodology the BIP 440 costs are fitted from.
+
+### Tools
+
+- **Script tools:** [gsr-tooling](https://github.com/bitcoin-gsr/gsr-tooling) checks Tapleaf 0xc2 scripts without executing them, compresses them with reusable macros, and disassembles and analyzes them.
 
 ### Proof-of-concepts
 
 - **Zero-knowledge proof verifiers:** [gsr-stark-verifier](https://github.com/ekrembal/gsr-stark-verifier) verifies a RISC Zero succinct receipt and a recursive Stwo proof bundle, each in one standard Taproot spend mined on activated regtest.  It includes a covenant that only a proof can spend, reading its outputs with OP_TX, and a privacy rollup settled by the RISC Zero verifier.
 - **Groth16 bridge:** [coins-gsr-v1](https://github.com/jmoik/coins-gsr-v1) verifies SP1 proofs, wrapped as Groth16, with a pure-GSR Groth16 verifier built from restored arithmetic and macros.
+- **Post-quantum signatures:** [shrincs-gsr](https://github.com/bitcoin-gsr/shrincs-gsr) verifies SHRINCS, a hash-based post-quantum signature scheme, in GSR Script, with each stage measured on the prototype.
 - **In the specifications:** state-carrying covenants, rebindable signatures and key delegation are worked through in the [Extended Primitives examples](https://github.com/jmoik/bips/blob/gsr-full/bip-unknown-extended-primitives.md).
 
 All proof-of-concepts are research code and have not been audited.
@@ -36,7 +41,6 @@ All proof-of-concepts are research code and have not been audited.
 
 - bitcoindev: ["A Bitcoin Scripting Proposal BIP Quartet"](https://groups.google.com/g/bitcoindev/c/GisTcPb8Jco/m/8znWcWwKAQAJ)
 - Delving Bitcoin: ["Benchmarking Bitcoin Script Evaluation for the Varops Budget (Great Script Restoration)"](https://delvingbitcoin.org/t/benchmarking-bitcoin-script-evaluation-for-the-varops-budget-great-script-restoration/2094)
-- Overview of the five documents: TODO.
 
 ### Help wanted
 
